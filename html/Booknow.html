@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- This will generate the title of the page -->
+  <title>Book Now</title>
+  <!-- This section will link the html file to css file -->
+  <link rel="stylesheet" href="../css/Booknow.css">
+  <script src="../javascript/script.js"></script>
+</head>
+
+<body>
+
+  <!-- this div tag is used for navigation bar and for logo-->
+  <div class="nav">
+    <table>
+      <!-- Here we define the row element for navbar -->
+      <tr>
+        <!-- Here we define the column element for logo -->
+        <td>
+          <!-- Here we are providing the image of logo and for styling we are using cover class which is defined in css class  -->
+          <h2> <img src="../Images/logoo.png" class="cover"> </h2>
+        </td>
+        <!-- Here we define the column element for hyperlinks for other pages -->
+        <td>
+          <!-- Here are the hyperlinks using anchor tag -->
+       <a href="Home.html">Home</a>
+                    <a href="Services.html">Services </a>
+						 <a  href="Booknow.html">Booking</a>
+                    <a class="active" href="AboutUs.html">About Us</a>
+					  <a  href="Tracking.html">Tracking</a>
+        </td>
+		 <div  class="nav-right">
+					 <a href="javascript:signout();" >signout</a>
+					</div>
+      </tr>
+    </table>
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called odd and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <!-- This class called one contain the code to generate image of specific shape using clip-path -->
+  <div class="odd">
+    <div class="one"></div>
+    <!-- This inline css is just providing the margin top for minor adjustments along with the class one which is defined in the css file -->
+    <div class="two" style="margin-top: 150px;">
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type" name="type">Collective Ambulance</span>
+      <br>
+      <br>
+      <br>
+      <span  >Ambulance Number</span>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no" name="no">756 JWB</span>
+      <br>
+      <br>
+      <br>
+      <span >Driver Name</span>
+
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name" name="name">Steven Smith</span>
+      <br>
+      <br>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage-->
+      <span >Driver Phoneno</span>
+      <span style="color: white;background-color:  black;" id="phno" name="phno">4567899876</span>
+      <br>
+      <br>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the minimum age-->
+      <span >Helper Name</span>
+      <span style="color: white;background-color:  black;" id="helper" name="helper">Kane William</span>
+      <br>
+      <br>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the security amount-->
+      <span >Price</span>
+      <span style="color: white;background-color:  black;" id="hpno" name="hpno">550$</span><br>
+        <button  id="button" class="button buttoneff"style="margin-left: 470px;"  name="rent" onclick="passValues(1)" >Book Now</button>  
+	   
+
+
+
+	</div>
+</div>
+
+
+    </div>
+  </div>
+
+  <!-- 
+This section we made is more generic as it contans one outer div called even and two inner divs called one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+
+  <div class="even">
+    <!-- This inline css is just providing the margin left for adjustments along with the class three which is defined in the css file -->
+    <div class="three" style="margin-left: -333px; ">
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type2" name="type2">Individual Ambulance</span>
+      
+      <br>
+      <br>
+      <br>
+      <span>Ambulance Number</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no2" name="no2">767ERT</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name2" name="name2">Abe Jony</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage-->
+      <span style="color: white;background-color:  black;"id="phno2" name="phno2">5676789801</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the minimum age-->
+      <span style="color: white;background-color:  black;" id="helper2" name="helper2">Dani</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the security amount-->
+      <span style="color: white;background-color:  black;" id="hpno2" name="hpno2">345$</span><br>
+	    <button style="margin-left: 470px;"  class="button buttoneff" onclick="passValuesTwo(2)">Book Now</button><br> 
+	   
+
+
+
+    </div>
+    <!-- This section will contain the image of desired shape in which class four contain all the code which is described in class four in css file -->
+    <div class="four">
+
+    </div>
+
+
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called odd and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <div class="odd">
+    <!-- This section will contain the image of desired shape in which class five contain all the code which is described in class four in css file -->
+    <div class="five"></div>
+    <!-- This inline css is just providing the margin right for  minor adjustments along with the class six which is defined in the css file -->
+    <div class="six" style="margin-right: -25px;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type3" name="type3">Mobile ICU Ambulance</span>
+      <br>
+      <br>
+      <br>
+      <span>Ambulance Number</span>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no3" name="no3">457YUT</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name3" name="name3">Robert</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage-->
+      <span style="color: white;background-color:  black;" id="phno3" name="phno3">3456789876</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span style="color: white;background-color:  black; " id="helper3" name="helper3">Asenj</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <!-- This inline css is just providing the color and background color  along with the security-->
+      <span style="color: white;background-color:  black;" id="hpno3" name="hpno3">456$</span><br>
+	    <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesThree(3)">Book Now</button> 
+	   
+	  
+    </div>
+
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called even and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <div class="even">
+    <!-- This inline css is just providing the margin left for  adjustments along with the class seven which is defined in the css file -->
+    <div class="seven" style="margin-left: -333px;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type4" name="type4">Basic Life Support Ambulance</span>
+      <br>
+      <br>
+      <br>
+      <span>Ambulance Number</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no4" name="no4">345FRT</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name4" name="name4">Yuti</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage-->
+      <span style="color: white;background-color:  black;" id="phno4" name="phno4">3456789876</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the minimum age-->
+      <span style="color: white;background-color:  black;" id="helper4" name="helper4">Kevin</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the security amount-->
+      <span style="color: white;background-color:  black;" id="hpno4" name="hpno4">341$</span><br>
+	   <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesFour(4)">Book Now</button>
+	  
+    </div>
+    <!-- This section will contain the image of desired shape in which class four contain all the code which is described in class four in css file -->
+    <div class="eight"></div>
+
+  </div>
+
+  <!-- 
+This section we made is more generic as it contans one outer div called odd and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <div class="odd">
+    <!-- This section will contain the image of desired shape in which class nine contain all the code which is described in class four in css file -->
+    <div class="nine"></div>
+
+    <div class="ten">'
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type5" name="type5">Medical and Nursing Care Vehicle</span>
+      <br>
+      <br>
+      <br>
+      <span>Ambulance Number</span>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no5" name="no5">345TYN</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name5" name="name5">Roni</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage -->
+      <span style="color: white;background-color:  black;" id="phno5" name="phno5">3451346789</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <!-- This inline css is just providing the color and background color  along with the minimum age -->
+      <span style="color: white;background-color:  black;" id="helper5" name="helper5">George</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <!-- This inline css is just providing the color and background color  along with the security amount -->
+      <span style="color: white;background-color:  black;" id="hpno5" name="hpno5">561$</span><br>
+       <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesFive(5)">Book Now</button>
+	   
+    </div>
+
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called even and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+
+  <div class="even">
+
+    <!-- This inline css is  just providing the margin left for  adjustments and calling the class eleven which is defined in the css file -->
+    <div class="eleven" style="margin-left: -333px;">
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type6" name="type6">Hospital Tent</span>
+      <br>
+      <br>
+      <br>
+      <span>Ambulance Number</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no6" name="no6">345RTY</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the maximum speed -->
+      <span style="color: white;background-color:  black;" id="name6" name="name6">Clark</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage -->
+      <span style="color: white;background-color:  black;" id="phno6" name="phno6">4568900890</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the minimum age -->
+      <span style="color: white;background-color:  black;" id="helper6" name="helper6">Abott</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the security amount -->
+      <span style="color: white;background-color:  black;" id="hpno6" name="hpno6">613$</span><br>
+	   <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesSix(6)">Book Now</button>
+    </div>
+    <!-- This section will contain the image of desired shape in which class twelve contain all the code which is described in class four in css file -->
+    <div class="twelve"></div>
+
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called odd and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <div class="odd">
+    <!-- This section will contain the image of desired shape in which class thirteen contain all the code which is described in class four in css file -->
+    <div class="thirteen"></div>
+    <!-- This inline css is calling the class eleven which is defined in the css file -->
+    <div class="fourteen">
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type7" name="type7">MVA Logistics Unit</span>
+      
+     
+      <br>
+      <br>
+      <br>
+
+      <span>Ambulance Number</span>
+      <!-- This inline css is just providing the color and background color  along with the model specification -->
+      <span style="color: white;background-color:  black;" id="no7" name="no7">345UIH</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <!-- This inline css is just providing the color and background color  along with the maximum speed-->
+      <span style="color: white;background-color:  black;" id="name7" name="name7">Eric</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage -->
+      <span style="color: white;background-color:  black;" id="phno7" name="phno7">457891345</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <!-- This inline css is just providing the color and background color  along with the minimum age -->
+      <span style="color: white;background-color:  black;" id="helper7" name="helper7">David</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <!-- This inline css is just providing the color and background color  along with the security amount-->
+      <span style="color: white;background-color:  black;" id="hpno7" name="hpno7">834$</span><br>
+	   <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesSeven(7)">Book Now</button>
+    </div>
+
+  </div>
+  <!-- 
+This section we made is more generic as it contans one outer div called even and two inner divs callled one and two.
+one and two are two css classes which we will discuss further in our css class but briefly we can say it will divide the container into
+two portions in which one will contain content and other one will image.  -->
+  <div class="even">
+    <!-- This inline css is  just providing the margin left for  adjustments and calling the class fifteen which is defined in the css file -->
+    <div class="fifteen" style="margin-left: -339px;">
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- Basically for content section we prefer to use span tag as its more flexible  -->
+      <span id="type8" name="type8">Neonatal Incubator</span>
+
+   
+      <br>
+      <br>
+
+      <span>Ambulance Number</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the model specification-->
+      <span style="color: white;background-color:  black;" id="no8" name="no8">345DER</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Name</span>
+
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the maxiumum speed-->
+      <span style="color: white;background-color:  black;" id="name8" name="name8">Jerry</span>
+      <br>
+      <br>
+      <br>
+      <span>Driver Phoneno</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the kilomètrage-->
+      <span style="color: white;background-color:  black;" id="phno8" name="phno8">4561345678</span>
+      <br>
+      <br>
+      <br>
+      <span>Helper Name</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the minimum age -->
+      <span style="color: white;background-color:  black;" id="helper8" name="helper8">Charlie</span>
+      <br>
+      <br>
+      <br>
+      <span>Price</span>
+      <br>
+      <!-- This inline css is just providing the color and background color  along with the security amount-->
+      <span style="color: white;background-color:  black;" id="hpno8" name="hpno8">413$</span><br>
+	   <button style="margin-left: 470px;" class="button buttoneff" onclick="passValuesEight(8)">Book Now</button>
+    </div>
+    <!-- This section will contain the image of desired shape in which class sixteen contain all the code which is described in class four in css file -->
+    <div class="sixteen"></div>
+
+  </div>
+  </section>
+
+
+
+
+
+
+</body>
+<script>
+function signout(){
+		alert("You have been logout successfuly")
+		window.location="index.html"
+	}
+</script>
+
+</html>

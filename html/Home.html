@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Home.css" type="text/css" />
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- this div tag is used for navigation bar and for logo-->
+    <div class="nav">
+        <table>
+            <!-- Here we define the row element for navbar -->
+            <tr>
+                <!-- Here we define the column element for logo -->
+                <td>
+
+                    <!-- Here we are providing the image of logo and for styling we are using cover class which is defined in css class  -->
+                    <h2> <img src="../Images/logoo2.png" class="cover"> </h2>
+                </td>
+                <!-- Here we define the column element for hyperlinks for other pages -->
+                <td>
+                    <!-- Here are the hyperlinks using anchor tag -->
+            <a href="Home.html">Home</a>
+                    <a href="Services.html">Services </a>
+						 <a  href="Booknow.html">Booking</a>
+                    <a class="active" href="Aboutus.html">About Us</a>
+					  <a  href="Tracking.html">Tracking</a>
+					
+                </td>
+				 <div  class="nav-right">
+					 <a href="javascript:signout();" >signout</a>
+					</div>
+            </tr>
+        </table>
+    </div>
+    <!-- this section is for main page 1st image  -->
+    <section>
+
+        <table>
+            <tr>
+                <td width="45%">
+                    <h2 style="margin-left: 50px;font-family: Century Regular;">    Ambulance Service was founded in 1969<br>
+
+             and has grown from a small, one<br>
+
+              ambulance community based service,<br>
+
+           to the largest provider of quality ambulance <br>
+
+        services  in Montreal.
+                </td>
+                <td width="65%">
+                    <img src="../Images/hospital4.jpg" width="100%"
+                        style="clip-path: polygon(0 0, 100% 0%, 100% 100%, 30% 100%);">
+                </td>
+            </tr>
+        </table>
+    </section>
+    <!-- this table tag is used for all the images which is displayed in main portion of the page -->
+    <table>
+        <tr>
+            <!-- here rowspan is used to combine two row in a table -->
+            <td rowspan="2" class="container">
+
+                <img src="../Images/ambu2.jpg" width="100%" height="80%">
+                <div class="content">
+                    <!--    Here we have used paragraph tag to display content along with some inline css
+                    which will align content set font,margin to content -->
+                    <p style="font-size: 25px;text-align: center;">
+                    <p style="font-size: 25px;text-align: center;margin-top: -25px;"></p>
+                </div>
+            </td>
+            <td>
+                <img src="../Images/ambulance12.jpg" width="100%"; height="65%">
+            </td>
+
+        </tr>
+        <tr>
+            <td rowspan="2" class="container">
+                <img src="../Images/ambu1.jpg" width="100% "height="57.5%">
+                <div class="content1">
+                    <!--    Here we have used paragraph tag to display content along with some inline css
+                    which will align content set font,margin to content -->
+                    <p style="font-size: 25px;text-align: center;margin-left: -50px;"> </p>
+                    <p style="font-size: 25px;text-align: center;margin-top: -25px;margin-left: -40px;"></p>
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <img src="../Images/ambulance13.jpg" width="100%" >
+            </td>
+        </tr>
+    </table>
+    <table width=100% ; height=100%>
+        <!-- here we have used colspan to combine two column in the table -->
+        <td colspan="2">
+            <h1>
+                <!-- here we use paragraph tag for content and inline css for aligning content to center -->
+                <p style="text-align: center;">
+                  
+Learn more about our services
+                </p>
+            </h1>
+        </td>
+        <tr>
+            <!-- here for this column we used paragraph tag for content and anchor tag for link to youtube video
+            alogn with the image tag for image -->
+            <td>
+                <p style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=GNI41bAW-ds" target="_blank">
+                        <img src="../Images/image21.png">
+                    </a>
+                </p>
+            </td>
+            <!-- here for this column we used paragraph tag for content and anchor tag for link to youtube video
+            alogn with the image tag for image -->
+            <td>
+                <p style="text-align: center;">
+                    <a href="https://www.youtube.com/watch?v=7OpP6D09DJU" target="_blank">
+                        <img src="../Images/image21.png">
+                    </a>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+<script>
+function signout(){
+		alert("You have been logout successfuly")
+		window.location="index.html"
+	}
+</script>
+</html>

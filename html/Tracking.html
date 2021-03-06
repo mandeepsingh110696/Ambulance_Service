@@ -1,0 +1,68 @@
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- This will generate the title of the page -->
+  <title>Tracking</title>
+  <!-- This section will link the html file to css file -->
+  <link rel="stylesheet" href="../css/Tracking.css">
+  
+  <script src="../javascript/script.js"></script>
+</head>
+<body>
+
+
+   <!-- this div tag is used for navigation bar and for logo-->
+    <div class="nav">
+        <table>
+            <!-- Here we define the row element for navbar -->
+            <tr>
+                <!-- Here we define the column element for logo -->
+                <td>
+
+                    <!-- Here we are providing the image of logo and for styling we are using cover class which is defined in css class  -->
+                    <h2> <img src="../Images/logoo.png" class="cover"> </h2>
+                </td>
+                <!-- Here we define the column element for hyperlinks for other pages -->
+                <td>
+                    <!-- Here are the hyperlinks using anchor tag -->
+              <a href="Home.html">Home</a>
+                    <a  class="active" href="Services.html">Services </a>
+						 <a  href="Booknow.html">Booking</a>
+                    <a  href="Aboutus.html">About Us</a>
+					   <a  href="Tracking.html">Tracking</a>
+                </td>
+				 <div  class="nav-right"  style="float:right">
+					 <a href="javascript:signout();" >signout</a>
+					</div>
+            </tr>
+        </table>
+    </div>
+	<body style="background-image:"">
+<div class="container" >
+    <article class="card">
+        <header class="card-header"  style="text-align:center;font-size:25px;"> My Tracking </header>
+        <div class="card-body" style="text-align:center;">
+            <article class="card">
+                <div class="card-body row">
+                    <div   style="color:white;" class="col"> <strong>Estimated  time:</strong> <br>29 nov 2019 </div>
+                    <div  style="color:white;" class="col" > <strong>Status:</strong> <br> on the way </div>
+                    <div  style="color:white;" class="col"> <strong>Tracking id:</strong> <br>
+					  <input type="text" placeholder="Enter Tracking Id" ><br><br>
+					    <input  style="color:white;" "background-color:brown;" type ="button" value="Track"></Button><br>
+					  
+					  
+					</div>
+                </div>
+            </article>
+         
+         
+            <a href="Home.html" class="btn btn-warning" data-abc="true"> <i class="fa fa-chevron-left"></i> Back to Home</a>
+        </div>
+    </article>
+</div>
+
+<body>
+</html>

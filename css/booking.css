@@ -1,0 +1,116 @@
+body{
+    background-image: url("../Images/Thankyou.jpg");
+    
+}
+.hero h1 {
+ color: white;
+
+
+ font-size: 70px;
+ z-index: 1;
+}
+ul li{
+    position: absolute;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    list-style-type: none;
+    opacity: 0;
+    background-color: white;
+}
+.square li{
+    bottom: 50vh;
+    left: 45vw;
+    animation: square 9s linear infinite;
+
+}
+.square li:nth-child(2){
+    bottom: 80vh;
+    left: 20vw;
+    animation-delay: 1s;
+}
+.square li:nth-child(3){
+    bottom  : 90vh;
+    left: 50vw;
+    animation-delay: 3s;
+}
+.square li:nth-child(4){
+    bottom: 40vh;
+    left: 10vw;
+    animation-delay: 5s;
+}
+.square li:nth-child(5){
+    bottom  : 10vh;
+    left: 40vw;
+    animation-delay: 2s;
+}
+.square li:nth-child(6){
+    bottom  : 15vh;
+    left: 50vw;
+    animation-delay: 3s;
+}
+.square li:nth-child(7){
+    bottom: 45vh;
+    left: 10vw;
+    animation-delay: 5s;
+}
+.square li:nth-child(6){
+    bottom  : 100vh;
+    left: 80vw;
+    animation-delay: 2s;
+}
+@keyframes square{
+    0% 
+    {
+        transform: scale(0) rotatey(0deg);
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    100% {
+        transform: scale(5) rotatey(1000deg);
+        opacity: 0;
+        bottom: 90vh;
+        border-radius: 100%;
+    }
+}
+.circle li{
+bottom: 0;
+left: 15vw;
+animation: circle 9s linear infinite;
+}
+.circle li:nth-child(2){
+   
+    bottom: 80vh;
+    left: 30vw;
+    animation-delay: 2s;
+    }
+    .circle li:nth-child(3){
+        
+        left: 70vw;
+        animation-delay: 2s;
+        }
+        .circle li:nth-child(4){
+            left: 90vw;
+            animation-delay: 4s;
+            }
+            @keyframes circle
+            {
+                0% 
+                {
+                    transform: scale(0) rotate(0deg);
+                    opacity: 1;
+                    bottom: 0;
+                    border-radius: 0;
+                }
+                100% {
+                    transform: scale(7) rotate(1000deg);
+                    opacity: 0;
+                    bottom: 90vh;
+                    border-radius: 100%;
+                }
+            }
+			
+			
+			
+			

@@ -1,0 +1,336 @@
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+ body {
+   
+     font-family: 'Open Sans', serif;
+	 
+
+ }
+
+ .container {
+     margin-top: 40px;
+     margin-bottom: 50px;
+	 	 
+	 
+ }
+
+ .card {
+     position: relative;
+     display: -webkit-box;
+     display: -ms-flexbox;
+	 height:575px;
+     display: flex;
+	  background-image: url(../Images/Trackingback.jpg);
+	  
+	  background-position:-170px;
+	 background-repeat:no-repeat;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     min-width: 0;
+     word-wrap: break-word;
+     background-color: #fff;
+     background-clip: border-box;
+     border: 1px solid rgba(0, 0, 0, 0.1);
+     border-radius: 0.10rem
+ }
+
+ .card-header:first-child {
+     border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0
+ }
+
+ .card-header {
+     padding: 0.95rem 2.25rem;
+     margin-bottom: 0;
+	 top:10
+     background-color: #fffff;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+ }
+
+ .track {
+     position: relative;
+     background-color: #ddd;
+     height: 187px;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     margin-bottom: 60px;
+     margin-top: 20px
+ }
+
+ .track .step {
+     -webkit-box-flex: 1;
+     -ms-flex-positive: 1;
+     flex-grow: 1;
+     width: 25%;
+     margin-top: -18px;
+     text-align: center;
+     position: relative
+ }
+
+ .track .step.active:before {
+     background: #FF5722
+ }
+
+ .track .step::before {
+     height: 7px;
+     position: absolute;
+     content: "";
+     width: 100%;
+     left: 0;
+     top: 18px
+ }
+
+ .track .step.active .icon {
+     background: #ee5435;
+     color: #fff
+ }
+
+ .track .icon {
+     display: inline-block;
+     width: 40px;
+     height: 40px;
+     line-height: 40px;
+     position: relative;
+     border-radius: 100%;
+     background: #ddd
+ }
+
+ .track .step.active .text {
+     font-weight: 400;
+     color: #000
+ }
+
+ .track .text {
+     display: block;
+     margin-top: 7px
+ }
+
+ .itemside {
+     position: relative;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     width: 100%
+ }
+
+ .itemside .aside {
+     position: relative;
+     -ms-flex-negative: 0;
+     flex-shrink: 0
+ }
+
+ .img-sm {
+     width: 80px;
+     height: 80px;
+     padding: 7px
+ }
+
+ ul.row,
+ ul.row-sm {
+     list-style: none;
+     padding: 0
+ }
+
+ .itemside .info {
+     padding-left: 15px;
+     padding-right: 7px
+ }
+
+ .itemside .title {
+     display: block;
+     margin-bottom: 5px;
+     color: #212529
+ }
+
+ p {
+     margin-top: 0;
+     margin-bottom: 1rem
+ }
+
+ .btn-warning {
+     color: #ffffff;
+     background-color: #ee5435;
+     border-color: #ee5435;
+     border-radius: 1px
+ }
+
+ .btn-warning:hover {
+     color: #ffffff;
+     background-color: #ff2b00;
+     border-color: #ff2b00;
+     border-radius: 1px
+ }
+ 
+ 
+ 
+ /* This class will help us to adjust the position to relative that is with respect to the other conatiner along with that width set to 100% */
+
+
+
+/* These two classes called one and two will set the positon to absolute meaning it will be stating no matter what and there are some 
+other attributes for width,height and margin from all sides */
+
+.one, .two {
+  position: absolute;
+  height: 310px;
+  width: 50%;
+  margin: 35px;
+}
+
+/*  This class called one specifically for left section of the page have  many elements its for content which has the following attributes
+   such as left,width,height,top and margin-top */
+
+.one {
+  left: 0;
+  width: 50%;
+  height: 450px;
+  top: 0;
+  margin-top: 190px;
+}
+
+/*  This class called shape specifically for right section of the page have  many elements but for the shape we use clipPath with respect to 
+ the parallelogram with  the margin-left ,padding,width,height,right,top in it along with there are some more parameteres like backgroundimage ,
+ background-size,webkit-clip-path and clip-path and outer shape function is polygon and by adjusting the margin ,padding left right 
+  bottom top will generate the parallelogram  */
+
+.shape {
+  width: 50%;
+  height: 550px;
+  right: 0;
+  top: 0;
+  margin-left: 670px;
+  background-image: url(../Images/Image20.png);
+  background-size: 100% 100%;
+  margin-top: -90px;
+  -webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/* Basically for all the content section we prefer span for its flexibility along with that  we set some more parameters such as color,
+backgroundcolor,margin-left  and all of this content is in div*/
+
+div span {
+  color: white;
+  font-size: 30px;
+}
+
+/* This body class basically fill background color  black with respect to the body tag */
+
+body {
+  
+     background-color: black;
+}
+
+/* This checked class  basically fill  color  to orange with respect to the checked class */
+
+.checked {
+  color: orange;
+}
+
+/* This * will give the whole page  box-sizing to border-box */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other along with that float which is left ,width, padding,height */
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px;
+}
+
+/* Clear floats after the columns with display in form of table and it will clear the divs */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* This  #splitimg used by id by giving the background as image with width,height,background-size to cover; */
+
+#splitimg {
+  background: url(../Images/Group4.png);
+  width: 1100px;
+  height: 200px;
+  background-size: cover;
+  /* clip-path: polygon(0 0, 100% 0, 82% 20%, 0 20%);  */
+}
+
+/* This hide class will provide background-color to black along with width and height */
+
+.hide {
+  background-color: black;
+  width: 10px;
+  height: 10px;
+}
+
+/* This transp class will provide border along with width and height */
+
+.transp {
+  border: 2px solid #000000;
+  width: 300px;
+  height: 113px;
+}
+
+/* this is to style the navigation */
+
+.nav {
+  width: 100%;
+  height: 10%;
+  top:35%
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+
+.nav a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 36px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+
+.nav a:active {
+  background-color: black;
+  font-style: initial;
+  color: white;
+}
+
+
+.cover {
+  width: 50%;
+  margin-left: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+  margin-left: 35px;
+}

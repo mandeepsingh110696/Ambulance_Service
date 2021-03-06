@@ -1,0 +1,341 @@
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/Product.css" type="text/css" /> 
+    <title>Booking</title>
+	
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+	
+	 <script src="../javascript/script.js  " ></script>
+	   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+  
+   
+   
+   
+   <div class="center">
+      <input type="checkbox" id="show">
+      <!-- <label for="show" class="show-btn">View Form</label> -->
+      <div class="container">
+    
+		
+		  <label for="show" class="close-btn fas fa-times" title="close"></label>
+        <div class="text" style="color:black;" >Ambulance Info</div>
+        <form action="#">
+          <div class="data" >
+            <label style="color:black;">Ambulance Type:-</label>
+             <span style="color:black;" id="type" name="type">MVA LOGISTICS UNIT</span><br>
+			  <label style="color:black;">Ambulance Number:-</label>
+             <span style="color:black;" id="no">756 JWB</span><br>
+			  <label style="color:black;">Driver Name:-</label>
+             <span style="color:black;" id="name">STEVEN SMITH</span><br>
+			  <label style="color:black;">Driver Phoneno:-</label>
+             <span style="color:black;" id="phno">5434678988</span><br>
+			  <label style="color:black;">Helper Name:-</label>
+             <span style="color:black;" id="helper">KANE WILLIAM</span><br>
+			  <label style="color:black;">Price:-</label>
+             <span style="color:black;" id="hpno">456$</span><br>
+          </div>
+		   
+		     <div class="text" style="color:black;" >Patient Info</div>
+		    <label style="color:black;"> Patient Name</label><br>
+            <input type="text"  placeholder="enter your name" id="pname" name="pname">  <br>
+			
+            <label style="color:black;" >Email</label><br>
+            <input type="text"  placeholder="enter email"  id="pemail" name="pemail"><br>
+          
+          
+            <label style="color:black;">Phoneno</label><br>
+            <input type="text" placeholder="enter phoneno"  id="pphone" name="pphone"><br>
+			
+			  <label style="color:black;">Pickup Address</label><br>
+            <input type="text" placeholder="Pickup Address"  id="Pickup" name="Pickup"><br>
+			
+			 <label style="color:black;">Destination Address</label><br>
+            <input type="text" placeholder="Destination Address"  id="Dest" name="Dest"><br>
+          
+		    <label style="color:black;">Date of pickup</label><br>
+            <input type="Date" placeholder="pickupdate"  id="dat" name="dat"><br>
+			
+			 <label style="color:black;">Time of pickup</label><br>
+            <input type="time" placeholder="picktime"  id="tim" name="tim"><br>
+			
+			  <p>Please select Patient's gender:</p>
+          <input type="radio" id="male" name="gender" value="male">
+        <label>Male</label><br>
+       <input type="radio" id="female" name="gender" value="female">
+       <label>Female</label><br>
+       <input type="radio" id="other" name="gender" value="other">
+       <label for="other">Other</label>
+	   
+	   
+			  <p>What is the requester's relationship to the patient:</p>
+          <input type="radio" id="Self" name="patient" value="Self">
+        <label>Self</label><br>
+       <input type="radio" id="parent" name="patient" value="parent">
+       <label>Parent/Guardian</label><br>
+       <input type="radio" id="others" name="patient" value="others">
+       <label for="other">Others</label>
+			
+			
+			<p>Patient's Medical condition?</p>
+	        <textarea  style=""id="condition" name="condition" rows="6" cols="50">
+Please write whether the patient need any of the following:-EkG monitor,Oxygen,Suctioning.
+            </textarea>
+			
+			
+			 <label style="color:black;">Time Arrival Request</label><br>
+            <input type="text" placeholder="Time Arrival Request"  id="req" name="req"><br>
+		
+			
+          
+			
+			 
+			                <div class="btn">
+            <div class="inner" ></div>
+           <Button type="button" name="confbook"  onclick="validationBookingInfo()">Confirm Booking</button>
+          </div>
+          
+         
+         
+        
+        </form>
+      </div>
+    </div>
+
+	
+	
+	
+	
+   <script>
+ 
+	 
+    
+	 if( localStorage.getItem("opt")==1){
+	   document.getElementById("type").innerHTML=localStorage.getItem("typ");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn"); 
+	 
+	 }
+	else if( localStorage.getItem("opt")==2){
+	 
+	   document.getElementById("type").innerHTML=localStorage.getItem("typ2");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo2");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam2");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn2");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe2");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn2"); 
+	 }
+	 else if( localStorage.getItem("opt")==3){
+	 
+	   document.getElementById("type").innerHTML=localStorage.getItem("typ3");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo3");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam3");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn3");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe3");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn3"); 
+	 }
+	 else if( localStorage.getItem("opt")==4){
+	 
+	   document.getElementById("type").innerHTML=localStorage.getItem("typ4");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo4");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam4");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn4");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe4");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn4"); 
+	 }
+	 else if( localStorage.getItem("opt")==5){
+	 
+	  document.getElementById("type").innerHTML=localStorage.getItem("typ5");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo5");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam5");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn5");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe5");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn5"); 
+	 }
+	 else if( localStorage.getItem("opt")==6){
+	 
+	  document.getElementById("type").innerHTML=localStorage.getItem("typ6");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo6");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam6");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn6");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe6");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn6"); 
+	 }
+	 else if( localStorage.getItem("opt")==7){
+	 
+	  document.getElementById("type").innerHTML=localStorage.getItem("typ7");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo7");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam7");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn7");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe7");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn7"); 
+	 }
+	 else if( localStorage.getItem("opt")==8){
+	 
+	   document.getElementById("type").innerHTML=localStorage.getItem("typ8");
+	 document.getElementById("no").innerHTML=localStorage.getItem("noo8");
+	 document.getElementById("name").innerHTML=localStorage.getItem("nam8");
+	 document.getElementById("phno").innerHTML=localStorage.getItem("phn8");
+	 document.getElementById("helper").innerHTML=localStorage.getItem("helpe8");
+	 document.getElementById("hpno").innerHTML=localStorage.getItem("hpn8"); 
+	 }
+	 
+	 
+	
+	document.querySelector('.close').addEventListener("click", function() {
+	document.querySelector('.close').style.display = "none";
+});
+	
+   </script>
+
+</body>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+}
+.show-btn{
+  background: #fff;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3498db;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+.show-btn, .container{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.container{
+ 
+  background: #fff;
+  width: 410px;
+  padding: 30px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+#show:checked ~ .container{
+  display: block;
+}
+.container .close-btn{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.container .close-btn:hover{
+  color: #3498db;
+}
+.container .text{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+.container form{
+  margin-top: -40px;
+}
+.container form .data{
+  height: 155px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .data label{
+  font-size: 18px;
+}
+form .data input{
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 1px solid silver;
+}
+form .data input:focus{
+  border-color: #3498db;
+  border-bottom-width: 2px;
+}
+form .forgot-pass{
+  margin-top: -8px;
+}
+form .forgot-pass a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .forgot-pass a:hover{
+  text-decoration: underline;
+}
+form .btn{
+  margin: 30px 0;
+  height: 45px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .inner{
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  transition: all 0.4s;
+}
+form .btn:hover .inner{
+  left: 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .signup-link{
+  text-align: center;
+}
+form .signup-link a{
+  color: #3498db;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+
+</style>
+
+</html>

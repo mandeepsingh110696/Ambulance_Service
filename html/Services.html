@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="../css/Services.css">
+    <title>Services</title>
+	
+	<script src="../javascript/script.js"></script>
+</head>
+
+<body>
+    <!-- this div tag is used for navigation bar and for logo-->
+    <div class="nav">
+        <table>
+            <!-- Here we define the row element for navbar -->
+            <tr>
+                <!-- Here we define the column element for logo -->
+                <td>
+
+                    <!-- Here we are providing the image of logo and for styling we are using cover class which is defined in css class  -->
+                    <h2> <img src="../Images/logoo2.png" class="cover"> </h2>
+                </td>
+                <!-- Here we define the column element for hyperlinks for other pages -->
+                <td>
+                    <!-- Here are the hyperlinks using anchor tag -->
+              <a href="Home.html">Home</a>
+                    <a  class="active" href="Services.html">Services </a>
+						 <a  href="Booknow.html">Booking</a>
+                    <a  href="Aboutus.html">About Us</a>
+					  <a  href="Tracking.html">Tracking</a>
+					
+                </td>
+				 <div  class="nav-right"  style="float:right">
+					 <a href="javascript:signout();" >signout</a>
+					</div>
+            </tr>
+        </table>
+    </div>
+    <!-- we have used div tag to display the images in main area of the page -->
+    <div class="grid-container">
+        <div class="item1"><img src="../Images/ambu3.jpg">
+            <!-- this div tag is used for displaying the text with overlay background -->
+            <div class="content">
+                <Button class="button buttoneff" onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <!-- p tag is used for displaying the name of the car and its model with the price per hour -->
+            <p class="left-top" style="color:white;"> &nbsp; &nbsp; &nbsp; &nbsp;  <br></p>
+        </div>
+        <div class="item2"><img src="../Images/ambu4.jpg">
+            <div class="content1">
+                <Button class="button buttoneff" onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <p class="right-top"> &nbsp; &nbsp; &nbsp; &nbsp;  <br></p>
+        </div>
+        <div class="item3"><img src="../Images/ambu5.jpg">
+            <div class="content2">
+                <Button class="button buttoneff" onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <p class="middle-top"> &nbsp; &nbsp; &nbsp; &nbsp; <br></p>
+        </div>
+        <div class="item4"><img src="../Images/ambu6.jpg">
+            <div class="content3">
+                <Button class="button buttoneff" onclick="productDetail()">See the<br>Details</Button>
+            </div>
+            <p class="middle"> &nbsp; &nbsp; &nbsp; &nbsp; <br></p>
+        </div>
+        <div class="item5"><img src="../Images/ambu7.jpg">
+            <div class="content4">
+                <Button class="button buttoneff" onclick="productDetail()">See the<br>Details</Button>
+            </div>
+            <p class="middle-bottom"> &nbsp; &nbsp; &nbsp; &nbsp; <br></p>
+        </div>
+        <div class="item6"><img src="../Images/ambu8.jpg">
+            <div class="content5">
+                <Button class="button buttoneff" onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <p class="middle-right">&nbsp; &nbsp; &nbsp; &nbsp; <br></p>
+        </div>
+        <div class="item7"><img src="../Images/ambu9.jpg">
+            <div class="content6">
+                <Button class="button buttoneff" onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <p class="bottom-left">&nbsp; &nbsp; &nbsp; &nbsp;<br></p>
+        </div>
+        <div class="item8"><img src="../Images/ambu10.jpg">
+            <div class="content7">
+                <Button class="button buttoneff " onclick="productDetail()">See the <br>Details</Button>
+            </div>
+            <p class="bottom-right">&nbsp; &nbsp; &nbsp; &nbsp; <br></p>
+        </div>
+    </div>
+
+</body>
+<script>
+function signout(){
+		alert("You have been logout successfuly")
+		window.location="index.html"
+	}
+</script>
+
+</html>
