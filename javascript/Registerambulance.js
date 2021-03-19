@@ -17,7 +17,7 @@ const registertionModel = mongoose.model('Registration-Ambulance',registerSchema
 module.exports=registertionModel;
 async function registerPatient(){
 
-const register = new registertion({
+const register = new registertionModel({
     firstname:'Mandeep',
     lastname:'Singh',
     email:'mandeep@gmail.com',
