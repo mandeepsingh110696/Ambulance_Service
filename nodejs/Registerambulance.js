@@ -1,3 +1,4 @@
+//registtration
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Ambulance-Service')
 .then(()=>console.log('Connected to Db'))
