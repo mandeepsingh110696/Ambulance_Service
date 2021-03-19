@@ -1,4 +1,3 @@
-//registtration
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/Ambulance-Service')
 .then(()=>console.log('Connected to Db'))
@@ -6,6 +5,7 @@ mongoose.connect('mongodb://localhost/Ambulance-Service')
 
 
 const express = require('express');
+const { select } = require('async');
 const app = express();
 
 const registerSchema= new mongoose.Schema({
@@ -19,10 +19,12 @@ const registerSchema= new mongoose.Schema({
 });
 const registertionModel = mongoose.model('Registration-Ambulance',registerSchema);
 
+//const loginModel = mongoose.model('Login',registerSchema);
+
 module.exports=registertionModel;
 async function registerPatient(){
 
-    app.post("/registerPatient",function(req,res,next){
+   // app.post("/registerPatient",function(req,res,next){
 const register = new registertionModel({
     firstname:'Mandeep',
     lastname:'Singh',
@@ -33,12 +35,30 @@ const register = new registertionModel({
     Address:'1345 rue champm'
    
 });
-    });
 
-const result = await register.save();
-console.log(result);
-
+    // });
+    const result = await register.save();
+    console.log(result);
+    
 }
+
+
+
    registerPatient();
 
 
+   
+   
+   //read login information
+async function login(){
+
+    // app.get("/loginambulance",function(req,res,next){
+const login = await registertionModel.find()
+.select({email:1,password:1});
+
+console.log(login);
+ //   });
+
+}
+
+login();
