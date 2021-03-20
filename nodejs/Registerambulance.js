@@ -24,7 +24,7 @@ const registertionModel = mongoose.model('Registration-Ambulance',registerSchema
 module.exports=registertionModel;
 async function registerPatient(){
 
-   // app.post("/registerPatient",function(req,res,next){
+  
 const register = new registertionModel({
     firstname:'Mandeep',
     lastname:'Singh',
@@ -62,3 +62,13 @@ console.log(login);
 }
 
 login();
+
+ app.post("/loginpatient",function(req,res,next){
+ });
+
+
+
+ app.post("/register",function(req,res,next){
+	 
+	 
+ });

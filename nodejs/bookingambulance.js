@@ -34,7 +34,7 @@ module.exports=bookingModel;
 async function bookAmbulance(){
 
 
-app.post("/booking",function(req,res,next){
+
 const booking = new bookingModel({
      AmbulanceType: 'Collective Ambulance',
      AmbulanceNumber: '756JWB',
@@ -55,7 +55,7 @@ const booking = new bookingModel({
     TimeArrivalRequest:'4:00pm'
    
 });
-});
+
 const result = await booking.save();
 console.log(result);
 
@@ -64,3 +64,6 @@ console.log(result);
   
 
 bookAmbulance();
+
+app.post("/booking",function(req,res,next){
+});

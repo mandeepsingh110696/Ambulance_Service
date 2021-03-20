@@ -24,7 +24,7 @@ const aboutUsModel = mongoose.model('Aboutus-Ambulance',aboutUsSchema);
 
 async function aboutUs(){
 
-    app.post("/aboutus",function(req,res,next){
+    
 const aboutUs = new aboutUsModel ({
     firstname:'Mandeep',
     lastname:'Singh',
@@ -35,12 +35,13 @@ const aboutUs = new aboutUsModel ({
     reasonmessage:'nothing serious'
    
 });
-    });
-
+    
 const result = await aboutUs.save();
 console.log(result);
 
 }
    aboutUs();
 
-
+app.post("/aboutus",function(req,res,next){
+	
+});
