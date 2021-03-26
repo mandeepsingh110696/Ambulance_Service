@@ -6,6 +6,10 @@
     <title>Thankyou</title>
     <link rel="stylesheet" href="../css/booking.css">
 	  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	  
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="../javascript/cancelbooking.js"></script>
+	 <script src="../javascript/scriptambu.js  " ></script>
 	
 </head>
 <body>
@@ -38,7 +42,7 @@
 			  <label style="color:black;">Customer Phoneno:-</label>
              <span style="color:black;" id="pphno"></span><br>
 			 
-			   <label style="color:black;">Price:-</label>
+	<!-- 		   <label style="color:black;">Price:-</label>
              <span style="color:black;" id="pickup"></span><br>
 			  <label style="color:black;">Customer Name:-</label>
              <span style="color:black;" id="dest"></span><br>
@@ -54,7 +58,9 @@
 			  <label style="color:black;">Customer Email:-</label>
              <span style="color:black;" id="condition"></span><br>
 			  <label style="color:black;">Customer Phoneno:-</label>
-             <span style="color:black;" id="req"></span><br>
+             <span style="color:black;" id="req"></span><br> -->
+			 
+			  <Button  type="button"  class="button"  name="bo" id="bo" onclick="cancelbooking()">cancel booking</Button>
           </div>
 		   
            
@@ -103,7 +109,14 @@
 		    document.getElementById("pphno").innerHTML=localStorage.getItem("pphno");
 			
 			
-			 document.getElementById("pickup").innerHTML=localStorage.getItem("pickup");
+		
+	
+	  
+    </script>
+	
+	
+	 
+		<!--  document.getElementById("pickup").innerHTML=localStorage.getItem("pickup");
 	      document.getElementById("dest").innerHTML=localStorage.getItem("dest");
 		   document.getElementById("dat").innerHTML=localStorage.getItem("dat");
 		    document.getElementById("tim").innerHTML=localStorage.getItem("tim");
@@ -112,14 +125,7 @@
 	     document.getElementById("gender").innerHTML=localStorage.getItem("gender");
 	      document.getElementById("patient").innerHTML=localStorage.getItem("patient");
 		   document.getElementById("condition").innerHTML=localStorage.getItem("condition");
-		    document.getElementById("req").innerHTML=localStorage.getItem("req");
-	
-	  
-    </script>
-	
-	
-	 
-	
+		    document.getElementById("req").innerHTML=localStorage.getItem("req"); -->
 </body>
  
 	  <style>

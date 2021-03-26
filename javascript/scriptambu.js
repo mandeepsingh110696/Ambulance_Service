@@ -1047,7 +1047,56 @@
 		
 		function cancelbooking(){
 			
+			  $(document).ready(function() {
+			   
 			
+				
+		
+		var _pemail=document.getElementById("pemail").innerHTML;
+		
+		var _pphno=document.getElementById("pphno").innerHTML;
+		
+		$('#bo').click(() => {
+		console.log(' cancel booking');
+
+
+		const email= $('#pemail').val();
+		const phone= $('#pphno').val();
+		
+	
+	
+	
+	
+		const cancelbooking= new CancelBooking (email,phone);
+
+		console.log(cancelbooking);
+		$.ajax({
+			url: url + `/cancelbooking`,
+			type: 'POST',
+			data: cancelbooking,
+			success: (res) => {
+				if (res.errorcode == "200") {
+					  alert(" booking cancel successfully");
+						
+					}
+				
+			       console.log('post response', res)
+			
+			},
+			error: (err) => {
+				alert('post error', err)
+			}
+		});
+		
+		
+	});
+		return false;
+	//	window.location="Thankyou.html";
+	
+		   
+	   });
+		
+		
 		}
 	
 	   function validationPayment(){
@@ -1143,7 +1192,7 @@
 			success: (res) => {
 				if (res.errorcode == "200") {
 					  alert("booking successfully");
-							//window.location="employee.html"
+							window.location="Thankyou.html"
 					}
 				
 			       console.log('post response', res)
