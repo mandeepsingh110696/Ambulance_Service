@@ -7,11 +7,9 @@
    <link rel="stylesheet" href="../css/Product.css" type="text/css" /> 
     <title>Booking</title>
 	
-<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
-<script defer src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+
 	
-	 <script src="../javascript/script.js  " ></script>
+	 <script src="../javascript/scriptambu.js  " ></script>
 	   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
@@ -57,10 +55,10 @@
             <input type="text" placeholder="enter phoneno"  id="pphone" name="pphone"><br>
 			
 			  <label style="color:black;">Pickup Address</label><br>
-            <input type="text" placeholder="Pickup Address"  id="Pickup" name="Pickup"><br>
+            <input type="text" placeholder="Pickup Address"  id="pickup" name="pickup"><br>
 			
 			 <label style="color:black;">Destination Address</label><br>
-            <input type="text" placeholder="Destination Address"  id="Dest" name="Dest"><br>
+            <input type="text" placeholder="Destination Address"  id="dest" name="dest"><br>
           
 		    <label style="color:black;">Date of pickup</label><br>
             <input type="Date" placeholder="pickupdate"  id="dat" name="dat"><br>
@@ -68,23 +66,12 @@
 			 <label style="color:black;">Time of pickup</label><br>
             <input type="time" placeholder="picktime"  id="tim" name="tim"><br>
 			
-			  <p>Please select Patient's gender:</p>
-          <input type="radio" id="male" name="gender" value="male">
-        <label>Male</label><br>
-       <input type="radio" id="female" name="gender" value="female">
-       <label>Female</label><br>
-       <input type="radio" id="other" name="gender" value="other">
-       <label for="other">Other</label>
-	   
+			  <p>Please write Patient's gender:</p>
+          <input type="text" id="gender" name="gender" placeholder="male,female">
 	   
 			  <p>What is the requester's relationship to the patient:</p>
-          <input type="radio" id="Self" name="patient" value="Self">
-        <label>Self</label><br>
-       <input type="radio" id="parent" name="patient" value="parent">
-       <label>Parent/Guardian</label><br>
-       <input type="radio" id="others" name="patient" value="others">
-       <label for="other">Others</label>
-			
+             
+			   <input type="text" id="patient" name="patient" placeholder="self ,brother etc">
 			
 			<p>Patient's Medical condition?</p>
 	        <textarea  style=""id="condition" name="condition" rows="6" cols="50">
@@ -101,7 +88,7 @@ Please write whether the patient need any of the following:-EkG monitor,Oxygen,S
 			 
 			                <div class="btn">
             <div class="inner" ></div>
-           <Button type="button" name="confbook"  onclick="validationBookingInfo()">Confirm Booking</button>
+           <Button type="button"  id="book" name="book"  onclick="validationBookingInfo()">Confirm Booking</button>
           </div>
           
          

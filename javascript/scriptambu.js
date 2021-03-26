@@ -151,13 +151,16 @@
 			type: 'POST',
 			data: register,
 			success: (res) => {
-				  alert(" customer register successfully");
+				if (res.errorcode == "200") {
+					  alert(" customer register successfully");
+							//window.location="employee.html"
+					}
+				
 			       console.log('post response', res)
 			
 			},
 			error: (err) => {
-				// alert(" customer register successfully");
-				console.log('post error', err)
+				alert('post error', err)
 			}
 		});
 		
@@ -189,69 +192,167 @@
 		}
 		
 	
+	
+		function validationContactUs(){
 			
-		
+			  $(document).ready(function() {
+				  
 
-		
-		
-	
 	
 
+			
+		var _name = document.getElementById("namee").value;
+		var _lastname = document.getElementById("lastname").value;
+		var _email = document.getElementById("email").value;
+		var _date = document.getElementById("date").value;
+		var _country = document.getElementById("country").value;
+		var _message = document.getElementById("message").value;
+		var _reasonmessage = document.getElementById("reasonmessage").value;
+		
+		
+		
+		
+				if(_name == ""){
+				document.getElementById('namee').innerHTML =alert(" ** Please fill the Name field");
+				return false;
+			}
+			else if((_name.length <= 2) || (_name.length > 20)) {
+				document.getElementById('namee').innerHTML = alert("** Name length must be between 2 and 20");
+				return false;	
+			}
+			else if(!isNaN(_name)){
+				document.getElementById('namee').innerHTML =alert(" ** only characters are allowed in Name field" );
+				return false;
+			} 
 
 
+			else if(_lastname == ""){
+				document.getElementById('lastname').innerHTML =alert(" ** Please fill the lastname field");
+				return false;
+			}
+			 else if((_lastname.length <= 2) || (_lastname.length > 20)) {
+				document.getElementById('lastname').innerHTML = alert("**  lastname length must be between 2 and 20");
+				return false;	
+			}
+			else if(!isNaN(_lastname)){
+				document.getElementById('lastname').innerHTML =alert(" ** only characters are allowed in lastname field" );
+				return false;
+			}
+			 
+			else if(_email == ""){
+				document.getElementById('email').innerHTML =alert(" ** Please fill the email id` field");
+				return false;
+			}
+			 else if(_email.indexOf('@') <= 0 ){
+				document.getElementById('email').innerHTML =alert(" ** @ Invalid Position");
+				return false;
+			}
+ 
+			else if((_email.charAt(_email.length-4)!='.') && (_email.charAt(_email.length-3)!='.')){
+				document.getElementById('email').innerHTML =alert(" ** . Invalid Position");
+				return false;
+			} 
+			
+				else if(_date == ""){
+				document.getElementById('date').innerHTML =alert(" ** Please fill the Date field");
+				return false;
+			}
+		
+			 var eff = document.getElementById("country");
+			 
+                var strUserr = eff.options[eff.selectedIndex].value;
+
+                var strUser2 = eff.options[eff.selectedIndex].text;
+                if(strUserr==0)
+                {
+                    alert("Please select a country");
+					return false;
+                }
+           
+			
+			else if(_message == ""){
+				document.getElementById('message').innerHTML =alert(" ** Please fill the Message field");
+				return false;
+			}
+			 else if(_reasonmessage == ""){
+				document.getElementById('reasonmessage').innerHTML =alert(" ** Please fill the Reason Message field");
+				return false;
+			}
+			else
+				
+			{
+				
+			
 
 
+        var _name = document.getElementById("namee").value;
+		var _lastname = document.getElementById("lastname").value;
+		var _email = document.getElementById("email").value;
+		var _date = document.getElementById("date").value;
+		var _country = document.getElementById("country").value;
+		var _message = document.getElementById("message").value;
+		var _reasonmessage = document.getElementById("reasonmessage").value;	
 
 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		$('#clik').click(() => {
+		console.log('Inserting a customer');
 
+	
+			const name = $('#namee').val();
+		const lname = $('#lastname').val();
+		const email = $('#email').val();
+		const date = $('#date').val();
+		const country= $('#country').val();
+		const message= $('#message').val();
+		const reasonmessage = $('#reasonmessage').val();
+	
+	
+		const contactus= new ContactUs  (name,lname,email,date,country,message,reasonmessage);
 
+		console.log(contactus);
+		$.ajax({
+			url: url + `/contactus`,
+			type: 'POST',
+			data: contactus,
+			success: (res) => {
+				if (res.errorcode == "200") {
+					  alert("signup successfully");
+							//window.location="employee.html"
+					}
+				
+			       console.log('post response', res)
+			
+			},
+			error: (err) => {
+				alert('post error', err)
+			}
+		});
+		
+		
+	});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			//	window.location="Home.html";
+			
+			    
+		return false;
+				
+			}	
+			});
+		}
+		
 var firebaseConfig = {
   apiKey: "AIzaSyB7MS5ZzX2h5BTRZltUj1Xr71UJ_tfs3Ho",
   authDomain: "mltextrecodemo.firebaseapp.com",
@@ -770,101 +871,7 @@ var firebaseConfig = {
 		
 		
 		
-		function validationContactUs(){
-
 	
-
-			
-		var _name = document.getElementById("namee").value;
-		var _lastname = document.getElementById("lastname").value;
-		var _email = document.getElementById("email").value;
-		var _date = document.getElementById("date").value;
-		var _country = document.getElementById("country").value;
-		var _message = document.getElementById("message").value;
-		var _reasonmessage = document.getElementById("reasonmessage").value;
-		
-		
-		
-		
-				if(_name == ""){
-				document.getElementById('namee').innerHTML =alert(" ** Please fill the Name field");
-				return false;
-			}
-			else if((_name.length <= 2) || (_name.length > 20)) {
-				document.getElementById('namee').innerHTML = alert("** Name length must be between 2 and 20");
-				return false;	
-			}
-			else if(!isNaN(_name)){
-				document.getElementById('namee').innerHTML =alert(" ** only characters are allowed in Name field" );
-				return false;
-			} 
-
-
-			else if(_lastname == ""){
-				document.getElementById('lastname').innerHTML =alert(" ** Please fill the lastname field");
-				return false;
-			}
-			 else if((_lastname.length <= 2) || (_lastname.length > 20)) {
-				document.getElementById('lastname').innerHTML = alert("**  lastname length must be between 2 and 20");
-				return false;	
-			}
-			else if(!isNaN(_lastname)){
-				document.getElementById('lastname').innerHTML =alert(" ** only characters are allowed in lastname field" );
-				return false;
-			}
-			 
-			else if(_email == ""){
-				document.getElementById('email').innerHTML =alert(" ** Please fill the email id` field");
-				return false;
-			}
-			 else if(_email.indexOf('@') <= 0 ){
-				document.getElementById('email').innerHTML =alert(" ** @ Invalid Position");
-				return false;
-			}
- 
-			else if((_email.charAt(_email.length-4)!='.') && (_email.charAt(_email.length-3)!='.')){
-				document.getElementById('email').innerHTML =alert(" ** . Invalid Position");
-				return false;
-			} 
-			
-				else if(_date == ""){
-				document.getElementById('date').innerHTML =alert(" ** Please fill the Date field");
-				return false;
-			}
-		
-			 var eff = document.getElementById("country");
-			 debugger
-                var strUserr = eff.options[eff.selectedIndex].value;
-
-                var strUser2 = eff.options[eff.selectedIndex].text;
-                if(strUserr==0)
-                {
-                    alert("Please select a country");
-					return false;
-                }
-           
-			
-			else if(_message == ""){
-				document.getElementById('message').innerHTML =alert(" ** Please fill the Message field");
-				return false;
-			}
-			 else if(_reasonmessage == ""){
-				document.getElementById('reasonmessage').innerHTML =alert(" ** Please fill the Reason Message field");
-				return false;
-			}
-			else
-			{
-				sendContactDataToFirebase(_name,_lastname,_email,_date,_country,_message,_reasonmessage);
-				return true;
-			    
-				
-				
-			}
-		
-
-		}
-		
-		
 		
 		
 		
@@ -919,97 +926,186 @@ var firebaseConfig = {
 				  var _type=document.getElementById("type").innerHTML;
 		var _no=document.getElementById("no").innerHTML;
 		var _hpno=document.getElementById("hpno").innerHTML;
-		/* var _name=document.getElementById("name").innerHTML;
-		var _phno=document.getElementById("phno").innerHTML;
-		var _helper=document.getElementById("helper").innerHTML;
-		var _hpno=document.getElementById("hpno").innerHTML;
-		var _pname = document.getElementById("pname").value;
+		var _name=document.getElementById("pname").value;
 		var _pemail = document.getElementById("pemail").value;
-		var _pphone = document.getElementById("pphone").value;
+		var _phno=document.getElementById("pphone").value;
 		var _pickup = document.getElementById("pickup").value;
 		var _dest = document.getElementById("dest").value;
 		var _dat = document.getElementById("dat").value;
 		var _tim = document.getElementById("tim").value;
-		 */
+		
+	
+		 
 		
 		
-	/* 	var genderarr= Array.from(document.getElementByName("gender").value);
-		
-		var genderr;
-		for(var i=1;i<=genderarr.length;i++){
-			if(genderarr[i].checked){
-				genderr=genderarr[i].value;
-				break;
-			}
-		}
+		 var genderarr= document.getElementById("gender").value;
 		
 		
-	    var patientarr= Array.from(document.getElementByName("patient").value);
 		
-		var patientt;
-		for(var i=1;i<=patientarr.length;i++){
-			if(patientarr[i].checked){
-				patientt=patientarr[i].value;
-				break;
-			}
-		}
+		
+	    var patientarr=document.getElementById("patient").value;
+		
+		
+		
 		
 		var _condition = document.getElementById("condition").value;
 		
 		var _req = document.getElementById("req").value;
 		
-		 */
+		 
 		
 		
 			 
-		localStorage.setItem("type",_type);
-		localStorage.setItem("no",_no);
+		    localStorage.setItem("type",_type);
+		    localStorage.setItem("no",_no);
 			localStorage.setItem("hpno",_hpno);
-		/* localStorage.setItem("speed",_speed);
-		localStorage.setItem("milli",_milli);
-		localStorage.setItem("age",_age);
-		localStorage.setItem("depo",_depo);
-		localStorage.setItem("customername",_customername);
-		localStorage.setItem("customeremail",_customeremail);
-		localStorage.setItem("customerphone",_customerphone);  */
+			localStorage.setItem("name",_name);
+			localStorage.setItem("email",_pemail);
+		   localStorage.setItem("phone",_phno);
+		   localStorage.setItem("pickup",_pickup);
+			localStorage.setItem("dest",_dest);
+			localStorage.setItem("dat",_dat);
+		   localStorage.setItem("tim",_tim);
+		
+		localStorage.setItem("gender",genderarr);
+		   localStorage.setItem("patient",patientarr);
+		
+		localStorage.setItem("condition",_condition);
+		   localStorage.setItem("req",_req);
 		
 		
 		
-		window.location="paymentpage.html";
 		
-		return false;
-	}
+	
+	
+	
+		
+			//	window.location="Home.html";
+			window.location="paymentpage.html";
+		
+			}
+		
+		
+		
+		
 	
 	   function validationPayment(){
 		   
-				  var _aa=document.getElementById("aa").innerHTML;
-		var _bb=document.getElementById("bb").innerHTML;
+		   $(document).ready(function() {
+			   
+		   
+				  var _aa=document.getElementById("aa").value;
+		var _bb=document.getElementById("bb").value;
 		
-		var _price=document.getElementById("price").innerHTML;
+		var _price=document.getElementById("price").value;
+		
+		var _name=document.getElementById("name").value;
 		
 		
+		var _pemail=document.getElementById("pemail").value;
+		
+		var _pphno=document.getElementById("pphno").value;
+		
+		var pickup=document.getElementById("pickup").value;
+		
+		var dest=document.getElementById("dest").value;
+		
+		
+		var dat=document.getElementById("dat").value;
+		
+		var tim=document.getElementById("tim").value;
+		
+		
+			var gender=document.getElementById("gender").value;
+		
+		var patient=document.getElementById("patient").value;
+	
+		
+			var condition=document.getElementById("condition").value;
+		
+		var req=document.getElementById("req").value;
 		
 		localStorage.setItem("aa",_aa);
 		localStorage.setItem("bb",_bb);
 		localStorage.setItem("price",_price);
-		/* localStorage.setItem("speed",_speed);
-		localStorage.setItem("milli",_milli);
-		localStorage.setItem("age",_age);
-		localStorage.setItem("depo",_depo);
-		localStorage.setItem("customername",_customername);
-		localStorage.setItem("customeremail",_customeremail);
-		localStorage.setItem("customerphone",_customerphone);  */
+		localStorage.setItem("name",_name);
+			localStorage.setItem("pemail",_pemail);
+				localStorage.setItem("pphno",_pphno);
+				
+				localStorage.setItem("pickup",pickup);
+		localStorage.setItem("dest",dest);
+			localStorage.setItem("dat",dat);
+				localStorage.setItem("tim",tim);
+		
+		
+				localStorage.setItem("gender",gender);
+		localStorage.setItem("patient",patient);
+			localStorage.setItem("condition",condition);
+				localStorage.setItem("req",req);
 		
 		
 		
-		window.location="Thankyou.html";
+		  
+	
 		
+			$('#book').click(() => {
+		console.log('Inserting a booking');
+
+
+			const type = $('#aa').val();
+		const no= $('#bb').val();
+		const hpno = $('#price').val();
+		const name = $('#name').val();
+		const email= $('#pemail').val();
+		const phone= $('#pphno').val();
+		const pickup = $('#pickup').val();
+		const dest= $('#dest').val();
+		const dat= $('#dat').val();
+		const tim= $('#tim').val();
+		
+		
+			const gender = $('#gender').val();
+		const patient= $('#patient').val();
+		const condition= $('#condition').val();
+		const req= $('#req').val();
+		
+	
+	
+	
+		const booking= new Booking (type,no,hpno,name,email,phone,pickup,dest,dat,tim,gender,patient,condition,req);
+
+		console.log(booking);
+		$.ajax({
+			url: url + `/booking`,
+			type: 'POST',
+			data: booking,
+			success: (res) => {
+				if (res.errorcode == "200") {
+					  alert("booking successfully");
+							//window.location="employee.html"
+					}
+				
+			       console.log('post response', res)
+			
+			},
+			error: (err) => {
+				alert('post error', err)
+			}
+		});
+		
+		
+	});
 		return false;
-		
-		
-		
+	//	window.location="Thankyou.html";
+	
 		   
+	   });
 	   }
+	   
+		
+	   
+	   
+		
 				//sendBookingDataToFirebase(_namecar,_engine,_speed,_milli,_age,_depo,_customername,_customeremail,_customerphone);
 				//return true;
 			    

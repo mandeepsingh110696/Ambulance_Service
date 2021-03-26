@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="payment.css">
 	
-	 <script src="../javascript/script.js  " ></script>
+	
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="../javascript/booking.js"></script>
+	 <script src="../javascript/scriptambu.js  " ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
@@ -38,14 +41,32 @@
 					
                    
                   </div>
-                  <label  style="display:none;"id="aa" >Name of Card holder</label>
+                  <input type="text" style="display:none;"id="aa" />
 				  <label>Name of Card holder</label>
                   <input type="text" id="cname" name="cardname" placeholder="Name of Card holder">
-                  <label style="display:none;" id="bb" >Card number</label>
+                  <input type="text" style="display:none;" id="bb" />
 				    <label >Card number</label>
                   <input type="text" id="ccnum" name="cardnumber" placeholder="Card number">
-                  <label  style="display:none;" id="price" >Exp Month</label>
+                  <input type="text"  style="display:none;" id="price" />
 				  <label>Exp Month</label>
+				   <input type="text" style="display:none;" id="name" />
+				   
+				     <input type="text" style="display:none;" id="pemail" />
+					    <input type="text"  style="display:none;" id="pphno" />
+						
+						
+						  <input type ="text" style="display:none;" id="pickup" />
+				   
+				     <input type="text"  style="display:none;" id="dest"/>
+					    <input type="text"  style="display:none;" id="dat" />
+						<input type="text"  style="display:none;" id="tim" />
+						
+						
+						  <input type ="text" style="display:none;" id="gender" />
+				   
+				     <input type="text"  style="display:none;" id="patient"/>
+					    <input type="text"  style="display:none;" id="condition" />
+						<input type="text"  style="display:none;" id="req" />
                   <input type="text" id="expmonth" name="expmonth" placeholder="month">
       
                   <div class="design">
@@ -62,7 +83,7 @@
       
               </div>
               
-              <Button  type="button"  class="button" onclick="validationPayment()">Payment</Button>
+              <Button  type="button"  class="button"  name="book" id="book" onclick="validationPayment()">Payment</Button>
 			  
 			  
 			  
@@ -75,10 +96,30 @@
        
       </div>
   <script>
-	    document.getElementById("aa").innerHTML=localStorage.getItem("type");
-    	 document.getElementById("bb").innerHTML=localStorage.getItem("no");  
-		  document.getElementById("price").innerHTML=localStorage.getItem("hpno");  
-	
+	    document.getElementById("aa").value=localStorage.getItem("type");
+    	 document.getElementById("bb").value=localStorage.getItem("no");  
+		  document.getElementById("price").value=localStorage.getItem("hpno"); 
+         		  
+	      document.getElementById("name").value=localStorage.getItem("name"); 
+		   document.getElementById("pemail").value=localStorage.getItem("email"); 
+	       document.getElementById("pphno").value=localStorage.getItem("phone"); 
+		   
+		   
+		   
+		     document.getElementById("pickup").value=localStorage.getItem("pickup"); 
+         		  
+	      document.getElementById("dest").value=localStorage.getItem("dest"); 
+		   document.getElementById("dat").value=localStorage.getItem("dat"); 
+	       document.getElementById("tim").value=localStorage.getItem("tim"); 
+		   
+		   
+		   
+		     document.getElementById("gender").value=localStorage.getItem("gender"); 
+         		  
+	      document.getElementById("patient").value=localStorage.getItem("patient"); 
+		   document.getElementById("condition").value=localStorage.getItem("condition"); 
+	       document.getElementById("req").value=localStorage.getItem("req"); 
+	 
 	 
   </script>
    
