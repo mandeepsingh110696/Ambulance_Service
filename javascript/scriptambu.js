@@ -191,9 +191,14 @@
 			
 		}
 		
+		
+		
 	
 	
 		function validationContactUs(){
+			
+			
+			
 			
 			  $(document).ready(function() {
 				  
@@ -353,35 +358,13 @@
 			});
 		}
 		
-var firebaseConfig = {
-  apiKey: "AIzaSyB7MS5ZzX2h5BTRZltUj1Xr71UJ_tfs3Ho",
-  authDomain: "mltextrecodemo.firebaseapp.com",
-  databaseURL: "https://mltextrecodemo.firebaseio.com",
-  projectId: "mltextrecodemo",
-  storageBucket: "mltextrecodemo.appspot.com",
-  messagingSenderId: "8681410553",
-  appId: "1:8681410553:web:7292a9805863c7aa01b728"
-};
- // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-	function loginn(_email,_password){
-		
-     firebase.database().ref("user").push({
-     email:_email,
-     password:_password
-      });
 
-		const auth = firebase.auth();
-		const promise = auth.signInWithEmailAndPassword(_email, _password);
-		//promise.catch(e => alert(e.message));
 		
-		alert("Login Sucessfully");
-		window.location="Home.html";
-	
-	}
-	
-		function loginnvalidate(){
+		
+			function loginnvalidate(){
+				
+				  $(document).ready(function() {
+					  
 		var _email = document.getElementById("email").value;
 		var _pass = document.getElementById("password").value
 		
@@ -413,15 +396,88 @@ var firebaseConfig = {
 			
 			else
 			{
-				loginn(_email,_pass);
-				return true;
+				
+				
+				var _email = document.getElementById("email").value;
+		        var _pass = document.getElementById("password").value;
+				
+				
+				
+		
+		$('#log').click(() => {
+		console.log(' login customer');
+
+	
+	
+		const email = $('#email').val();
+		const passwords = $('#password').val();
+		
+	
+		const login= new Login (email,passwords);
+
+		console.log(login);
+		$.ajax({
+			url: url + `/login`,
+			type: 'POST',
+			
+		
+            
+			data: login,
+			success: (res) => {
+				  if(res.errorcode!="403"){
+			        window.location="Home.html";
+				 
+				  }
+				   console.log('post response', res)
+				   alert(res.message);
+			
+			},
+			error: (err) => {
+				alert('post error', err)
+			}
+		});
+		
+		
+	});
+
+			//	window.location="Home.html";
+			
 			    
+		return false;
+		
+		
 				
 				
 			}
+			
+			});
+			}
+				
+				
+			    
+				
+				
+			
 		
 
-		}
+		
+	
+	function loginn(_email,_password){
+		
+     firebase.database().ref("user").push({
+     email:_email,
+     password:_password
+      });
+
+		const auth = firebase.auth();
+		const promise = auth.signInWithEmailAndPassword(_email, _password);
+		//promise.catch(e => alert(e.message));
+		
+		alert("Login Sucessfully");
+		window.location="Home.html";
+	
+	}
+	
 	
 	function registerr(_fname,_lname,_pass,_cpass,_email,_cars,_no)
 	{
@@ -988,6 +1044,11 @@ var firebaseConfig = {
 		
 		
 		
+		
+		function cancelbooking(){
+			
+			
+		}
 	
 	   function validationPayment(){
 		   
