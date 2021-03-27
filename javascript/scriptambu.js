@@ -153,7 +153,7 @@
 			success: (res) => {
 				if (res.errorcode == "200") {
 					  alert(" customer register successfully");
-							//window.location="employee.html"
+							window.location="Home.html"
 					}
 				
 			       console.log('post response', res)
