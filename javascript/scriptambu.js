@@ -1059,15 +1059,15 @@
 		$('#bo').click(() => {
 		console.log(' cancel booking');
 
-
+/* 
 		const email= $('#pemail').val();
 		const phone= $('#pphno').val();
-		
+		 */
 	
 	
 	
 	
-		const cancelbooking= new CancelBooking (email,phone);
+		const cancelbooking= new CancelBooking (_pemail,_pphno);
 
 		console.log(cancelbooking);
 		$.ajax({
@@ -1075,12 +1075,10 @@
 			type: 'POST',
 			data: cancelbooking,
 			success: (res) => {
-				if (res.errorcode == "200") {
-					  alert(" booking cancel successfully");
-						
-					}
 				
-			       console.log('post response', res)
+					  alert(res.message);
+						
+					    console.log('post response', res)
 			
 			},
 			error: (err) => {
