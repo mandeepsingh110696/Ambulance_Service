@@ -1096,6 +1096,18 @@
 		
 		
 		}
+		
+		
+		
+		function track(){
+			var tracking = document.getElementById("tracking").value;
+			if(tracking!=""){
+				alert("Ambulance is on the way");
+			}
+			else{
+				alert("invalid traking id");
+			}
+		}
 	
 	   function validationPayment(){
 		   
